@@ -1,0 +1,27 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "This is a website for Eli Sailer-Haugland. This website is NOT published yet and is currently in development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treefrog986/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treefrog986/personal-website/issues"
+  },
+  "homepage": "https://github.com/treefrog986/personal-website#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "googleapis": "^78.0.0",
+    "nodemailer": "^6.6.2",
+    "serve": "^12.0.0"
+  }
+}
