@@ -1,15 +1,22 @@
-var PORT = 3002;
 const express = require('express');
+const path = require('path');
+const contact = require('./routes/contact');
+const academic = require("./routes/academics");
 const app = express();
+const PORT = process.env.PORT || 8080;
+//const router = require(".routes");
 
-require('dotenv').config();
+//var http = require('http');
+//var server = http.Server(app);
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
+app.use("/contact", contact);
+app.use("/academics", academic);
 
-console.log(process.env);
-var http = require('http');
-var server = http.Server(app);
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, '/main/index.html'));
+});
 
-app.use(express.static('client'));
-
-server.listen(PORT, function(){
-    console.log("running");
+app.listen(PORT, () => {
+    console.log('App is live at ' + PORT);
 });
