@@ -7,9 +7,9 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
-const oAuth2Clinent = new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET, REDIRECT_URI);
+const GMAIL_CLIENT = new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET, REDIRECT_URI);
 
-oAuth2Clinent.setCredentials({ refresh_token: REFRESH_TOKEN});
+GMAIL_CLIENT.setCredentials({ refresh_token: REFRESH_TOKEN});
 
 let router = express.Router();
 
@@ -19,7 +19,7 @@ router.route("/").get((req, res) => {
 .post((req,res) =>{
 async function sendMail(){
 try{
- const accesToken = await oAuth2Clinent.getAccessToken();
+ const ACCESS_TOKEN= await GMAIL_CLIENT.getAccessToken();
  const transport = nodemailer.createTransport({
      service: 'gmail',
      auth: {
@@ -28,7 +28,7 @@ try{
          clientId: CLIENT_ID,
          clientSecret: CLIENT_SECRET,
          refreshToken: REFRESH_TOKEN,
-         accessToken: accesToken
+         accessToken: ACCESS_TOKEN
      }
  });
 
