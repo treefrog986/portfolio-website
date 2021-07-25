@@ -7,9 +7,8 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
-
-console.log(process.env.REDIRECT_URI)
 const oAuth2Clinent = new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET, REDIRECT_URI);
+
 oAuth2Clinent.setCredentials({ refresh_token: REFRESH_TOKEN});
 
 let router = express.Router();
@@ -31,7 +30,7 @@ try{
          refreshToken: REFRESH_TOKEN,
          accessToken: accesToken
      }
- })
+ });
 
  const mailOptions = {
      from: ' Eli\'s porfolio Website',
@@ -41,10 +40,10 @@ try{
      html: `<h4> Email: ${req.body.email} </h4>
             <h4> Name: ${req.body.name} </h4>
             <p> Message <br> ${req.body.message}`
- };
- const result = await transport.sendMail(mailOptions)
- //document.getElementById('result').innerHTML = "Success";
- return result
+ }
+
+ const result = await transport.sendMail(mailOptions);
+ return result;
 }
 catch(error){
     return error;
@@ -57,4 +56,5 @@ sendMail().then((result) => {
 })
 .catch(error => console.log(error.mmessage));
 });
+
 module.exports = router;
