@@ -5,7 +5,7 @@ const academic = require("./routes/academics");
 const technical = require("./routes/tech");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 //const router = require(".routes");
 
 //var http = require('http');

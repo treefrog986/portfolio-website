@@ -7,4 +7,4 @@ router.route("/").get((req, res) => {
     res.sendFile(path.join(__dirname, '..','AcademicsAndL','index.html'));
 })
 
-module.exports = router
+module.exports = router;
