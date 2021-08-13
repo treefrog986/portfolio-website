@@ -13,11 +13,14 @@ header{
   text-align: center;
 }
 .academic{
-  color: rgb(14, 54, 165);
+  color: rgb(19, 41, 102);
   }
 .academic div{
   padding: 0px 20px;
   width:50%;
+}
+.academic dt, .academic dd{
+  font-size: 1.2em;
 }
 .container, .tech, .academic, .end{
   display: flex;
@@ -34,7 +37,7 @@ header{
 }
 .tech div ul{
   list-style-type: none;
-  text-align: center;
+  padding: 0px;
 }
 dt{
   font-weight: bold;
@@ -48,6 +51,18 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.project h2{
+  font-size: 2em;
+  text-align: center;
+}
+.project dd, .project dt{
+  list-style-type: none;
+  font-size:25px;
+}
+.project dt{
+  text-decoration: underline;
 }
 
 .navbar {
@@ -84,7 +99,7 @@ body{
   }
 
 form{
-background: rgb(16, 72, 175);
+background: rgb(49, 121, 255);
 text-align: center;
 margin: 0 auto;
 padding: 0px 0px 10px 0px;
@@ -114,7 +129,7 @@ input[type=submit]{
   cursor: pointer;
 }
 input[type=text], input[type=email]{
-  border-radius: 4px;
+  border-radius: 10px;
   border: none;
   width: 240px;
   padding: 5px 5px;

@@ -1,6 +1,5 @@
 const express = require("express");
 const { google } = require('googleapis'); 
-//require('dotenv').config();
 const nodemailer = require('nodemailer');
 const path = require('path');
 const CLIENT_ID = process.env.CLIENT_ID;
