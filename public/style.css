@@ -35,10 +35,15 @@ header{
   width: 33%;
   text-align: center;
 }
+.tech h2{
+  text-decoration: underline;
+}
 .tech div ul{
   list-style-type: none;
   padding: 0px;
+  font-size: 1.4em;
 }
+
 dt{
   font-weight: bold;
 }
@@ -77,7 +82,7 @@ body{
     color: white;
     text-decoration: none;
     font-size: 17px;
-    width: 23%; /* Four links of equal widths */
+    width: 17%; /* Four links of equal widths */
     text-align: center;
   }
   

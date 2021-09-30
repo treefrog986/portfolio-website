@@ -3,7 +3,7 @@ const path = require('path');
 const contact = require('./routes/contact');
 const academic = require("./routes/academics");
 const technical = require("./routes/tech");
-
+const projects = require("./routes/project")
 const app = express();
 const PORT = process.env.PORT || 5000;
 //const router = require(".routes");
@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use("/contact", contact);
 app.use("/academics", academic);
 app.use("/technical", technical);
-
+app.use("/projects", projects);
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, '/main/index.html'));
 });
